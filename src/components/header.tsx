@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 
-function header() {
+function Header() {
   const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
   return (
     <Box
@@ -14,8 +14,8 @@ function header() {
       }}
       onClick={preventDefault}
     >
-      <Link href="#">Home</Link>
-      <Link href="#" color="inherit">
+      <Link href="/">Main</Link>
+      <Link href="/" color="inherit">
         Project 1
       </Link>
       <Link href="#" variant="body2">
@@ -24,4 +24,4 @@ function header() {
     </Box>
   )
 }
-export default header
+export default Header
