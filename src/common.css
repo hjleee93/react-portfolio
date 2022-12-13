@@ -7,10 +7,11 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-/* .notosanskr * { 
- font-family: 'Noto Sans KR', sans-serif;
-} */
+h1, p, span, div{
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 180%;
 
+}
 .typewriter span {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -73,6 +74,7 @@
   display: table;
   clear: both;
 }
+li { list-style-type: none; }
 
 /* Three dots */
 .dot {
@@ -108,7 +110,6 @@ input[type=text] {
 
 .content p{
   text-align: center;
-  line-height: 180%;
 }
 
 .info{
@@ -138,6 +139,18 @@ input[type=text] {
   width: 60%;
 }
 
+.project-card div:nth-child(1){
+  width: 300px;
+  min-width: 300px;
+}
+.project-card div:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
 @media all and (max-width:  767px) {
   .row{
     padding:10px;
@@ -152,5 +165,15 @@ input[type=text] {
   .info img{
     margin: 0 auto;
   }
+
+
+.project-card {
+  flex-direction: column;
+
+}
+.project-card div:nth-child(1){
+ margin: 0 auto;
+ width: 350px;
+}
   
 }
