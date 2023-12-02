@@ -8,7 +8,7 @@ import Skills from './components/Skills';
 import icon from './assets/coding.png'
 import Footer from './components/Footer';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import Header from './components/Header';
+import Header from './components/header';
 import { scrollToRef } from './scripts/utils'
 
 function App() {
