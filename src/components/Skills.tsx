@@ -5,13 +5,13 @@ const skills = [
   {
     lang:'Vue.js',
     desc:'',
-    percentage:90,
+    percentage:80,
     color:'#41b883'
 
   },
   {
     lang:'Typescript',
-    percentage:80,
+    percentage:70,
     color:'#3178c6'
 
   },
@@ -23,7 +23,7 @@ const skills = [
   },
   {
     lang:'Javascript',
-    percentage:80,
+    percentage:70,
     color:'#f1dd35'
 
   },

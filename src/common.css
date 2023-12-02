@@ -12,7 +12,7 @@ h1, p, span, div{
   line-height: 180%;
 
 }
-.typewriter span {
+.typewriter .ani-desc {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto;
@@ -22,6 +22,18 @@ h1, p, span, div{
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
   
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.ani-btn{
+  opacity: 1;
+  animation: fadeIn 4s ease-in-out;
 }
 
 /* The typing effect */
@@ -57,17 +69,6 @@ h1, p, span, div{
   float: left;
 }
 
-.left {
-  width: 15%;
-}
-
-.right {
-  width: 10%;
-}
-
-.middle {
-  width: 75%;
-}
 
 .row:after {
   content: "";

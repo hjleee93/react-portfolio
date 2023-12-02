@@ -1,27 +1,28 @@
-import React from 'react'
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
+import React, { useState } from 'react'
+import './Header.scss';
+import Dropdown from './Dropdown';
 
-function Header() {
-  const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
+
+function Header({addrMsg}:{addrMsg:string}) {
+  const [addMsg, setAddrMsg] = useState('https://안녕하세요_프론트엔드_개발자_이현정입니다.com')
+
+   
+  
   return (
-    <Box
-      sx={{
-        typography: 'body1',
-        '& > :not(style) + :not(style)': {
-          ml: 2,
-        },
-      }}
-      onClick={preventDefault}
-    >
-      <Link href="/">Main</Link>
-      <Link href="/" color="inherit">
-        Project 1
-      </Link>
-      <Link href="#" variant="body2">
-        Project 2
-      </Link>
-    </Box>
+    <div className="header">
+          <div className="column left">
+            <span className="dot" style={{background:"#ED594A"}}></span>
+            <span className="dot" style={{background:"#FDD800"}}></span>
+            <span className="dot" style={{background:"#5AC05A"}}></span>
+          </div>
+          <div className="column middle">
+            <input readOnly type="text" value={addrMsg}/>
+          </div>
+    
+          <div className="column right" >
+            <Dropdown/>
+          </div>
+        </div>
   )
 }
 export default Header
