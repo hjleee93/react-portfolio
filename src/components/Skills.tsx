@@ -46,7 +46,7 @@ const skillBar = skills.map((skill)=>{
 })
   
 return(
-  <div >
+  <div>
     <h3>Skills</h3>
    {skillBar}
         

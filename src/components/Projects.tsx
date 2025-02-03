@@ -33,6 +33,7 @@ function Projects() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  
   const projects = [
     {
       title:'Zempie',
@@ -48,7 +49,6 @@ function Projects() {
       ],
       img:'zempie',
       color:'#ff6e17',
-     
     },
     {
       title:'Miliverse',
@@ -95,20 +95,19 @@ function Projects() {
     p: 4,
   };
 
-  const cards = projects.map((project)=>{
-   
+  const cards = projects.map((project, index)=>{
 
     const lan =  project.langs.map((lan)=>{
       return <img src={img[lan]} width={30} key={lan}/>
     })
     const infos = project.infos.map((info) =>{
-      return <li style={{display:'flex'}}><CheckIcon style={{paddingTop:'3px'}}/>{info}</li>
+      return <li key={info}  style={{display:'flex'}}><CheckIcon style={{paddingTop:'3px'}}/>{info}</li>
      
     })
 
     return (
-      <div>
-        <Container key={project.title} className='project-card'>
+      <div key={index}>
+        <Container className='project-card'>
           <div style={{ backgroundColor:project.color, borderRadius:'10px', padding:'30px'}}>
             <img src={img[project.img]} style={{width:'100%'}} />
           </div>
@@ -123,7 +122,7 @@ function Projects() {
               <span style={{marginLeft:'10px'}}>{lan}</span>
               }
             </p>
-            <ul>
+            <ul key={index}> 
               {infos}
             </ul>
         
