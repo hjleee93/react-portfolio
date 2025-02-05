@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [
-   
-  ]
+  build: {
+    outDir: 'build',  // 빌드 폴더 이름을 'build'로 변경
+  },
+  plugins: []
 })
