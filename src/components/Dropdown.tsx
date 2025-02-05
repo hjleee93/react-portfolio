@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import './Dropdown.scss'
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-const Dropdown = () => {
+
+interface DropdownProps {
+  menuItems: { label: string; onClick: () => void }[]; 
+}
+
+const Dropdown: React.FC<DropdownProps>  = ({ menuItems }) => {
   const [isOpenDropdown, setIsOpenDropdown] = useState(false)
 
   const handleClickDropdown = () => {
@@ -15,10 +20,11 @@ const Dropdown = () => {
        {isOpenDropdown ? <CloseIcon/> : <MenuIcon/>}
         <div className={`dropdown ${isOpenDropdown && 'active'}`}>
           <ul>
-            <li>Home</li>
-            <li>Blog</li>
-            <li>Projects</li>
-            <li>Contact</li>
+            {menuItems.map((item, index) => (
+              <li key={index} onClick={item.onClick}>
+                {item.label}
+              </li>
+            ))}
           </ul>
         </div>
   </div>

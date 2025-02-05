@@ -1,6 +1,24 @@
 .dropdown-btn{
   cursor: pointer;
   display: flex;
+  .dropdown{
+    border-radius: 3px;
+    ul{
+      list-style-type: none;
+      padding: 0;
+      margin: 8px;
+      text-align: left;
+      li{
+        padding: 6px 8px;
+        color: black;
+        border-radius: 3px;
+        &:hover{
+          background-color: #e8e8e8;
+        }
+      }
+    }
+  }
+
 }
 
 .dropdown{

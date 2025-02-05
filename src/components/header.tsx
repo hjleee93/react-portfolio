@@ -6,6 +6,12 @@ import Dropdown from './Dropdown';
 function Header({addrMsg}:{addrMsg:string}) {
   const [addMsg, setAddrMsg] = useState('https://안녕하세요_프론트엔드_개발자_이현정입니다.com')
 
+  const headerMenu = [
+    {label: '홈',onClick: () => {}},
+    {label: '자기소개',onClick: () => () => {}},
+    {label: '프로젝트 소개',onClick: () => {}}
+  ]
+
    
   
   return (
@@ -20,7 +26,7 @@ function Header({addrMsg}:{addrMsg:string}) {
           </div>
     
           <div className="column right" >
-            <Dropdown/>
+            <Dropdown menuItems={headerMenu}/>
           </div>
         </div>
   )
