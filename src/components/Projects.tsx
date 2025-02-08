@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { doc, getDoc } from "firebase/firestore";
 import '../common.css'
 import styled from 'styled-components';
 import ts from '../assets/ts.png'
@@ -9,6 +10,7 @@ import zempie from '../assets/zempie.svg'
 import miliverse from '../assets/miliverse.png'
 import kia from '../assets/kia.webp'
 
+
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -16,6 +18,7 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CheckIcon from '@mui/icons-material/Check';
+import { db } from '../utils/firebase';
 
 
 const img: any = {
@@ -29,10 +32,12 @@ const img: any = {
 }
 
 
+
 function Projects() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   
   const projects = [
     {
@@ -77,12 +82,13 @@ function Projects() {
     
   ]
   
-  const Container = styled.div`
-    margin: 40px;  
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
-    padding:20px;
-    display:flex;
-  `;
+  // const Container = styled.div`
+  //   margin: 40px;  
+  //   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+  //   padding:20px;
+  //   display:flex;
+  // `;
+
   const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
@@ -94,6 +100,30 @@ function Projects() {
     boxShadow: 24,
     p: 4,
   };
+
+
+
+  useEffect(() => {
+    
+    const fetchData = async () => {
+      const docRef = doc(db, "portfolio", "experience");
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  
+
+
+  
 
   const cards = projects.map((project, index)=>{
 
@@ -107,7 +137,7 @@ function Projects() {
 
     return (
       <div key={index}>
-        <Container className='project-card'>
+        <div className='project-card'>
           <div style={{ backgroundColor:project.color, borderRadius:'10px', padding:'30px'}}>
             <img src={img[project.img]} style={{width:'100%'}} />
           </div>
@@ -152,7 +182,7 @@ function Projects() {
       </Modal>
 
         </div>
-        </Container>
+        </div>
       </div>
       
 
