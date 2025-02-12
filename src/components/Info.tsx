@@ -14,7 +14,7 @@ const Info: React.FC = () => {
   const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
-    
+
     const fetchData = async () => {
       const docRef = doc(db, "portfolio", "user");
       const docSnap = await getDoc(docRef);
@@ -25,35 +25,39 @@ const Info: React.FC = () => {
         console.log("No such document!");
       }
     };
-    
+
     fetchData();
   }, []);
 
-  
 
 
-  return ( 
+
+  return (
     <div className="info-container" ref={ref}>
       <div className="row">
-       
+
         <div className='info'>
           <p>
-            <img src="/profile.jpeg" width="300px" style={{marginTop:'30px'}}/>
+            <img src="/profile.jpeg" width="300px" style={{ marginTop: '30px' }} />
           </p>
           <div className="content">
-            {user ? 
-            <p dangerouslySetInnerHTML={{__html: user?.introduction}}></p>   
-            :
-            <div>
-            <h3>안녕하세요</h3>
-            <p> 2년 차 프론트엔드 개발자 이현정입니다.<br/>
-              Vue.js로 SPA, SSR로 프로젝트를 설계부터 배포, 운영까지 해온 경험을 가지고 있습니다.
-                버그를 최소화 하기 위해 테스트코드를 작성하며 개발을 진행합니다. 또한 보다 편한 유지보수를 위해 클린코드를 작성하려고 노력합니다. 이슈나 버그의 회고를 습관화하여 동일한 문제를 방지화 하고 사내 개발 문서에 기여하여 발전을 도모합니다.</p>
-
-             <p> 최근에는 다양한 프레임워크의 사용을 위해 React.js를 학습하고 있습니다.</p>
-             </div>
+            {user ?
+              <p dangerouslySetInnerHTML={{ __html: user?.introduction }}></p>
+              :
+              <div>
+                <h2><b>안녕하세요!</b></h2><br />  
+                4년 차 프론트엔드 개발자 이현정입니다.<br /> <br />   
+                <u>Vue.js를 사용</u>하여 SPA와 SSR 프로젝트를 설계하고 배포하며 운영한 경험을 통해, 실제 서비스 환경에서의 문제 해결과 최적화 작업을 다수 진행해왔습니다. <br/>   사용자의 요구를 정확히 반영하고, 성능을 고려한 UI/UX 설계 및 구현을 중시했습니다. <br />
+                그 과정에서 다양한 라이브러리와 툴을 사용하며 기술적으로 성장할 수 있었습니다. 
+                또한, <u>협업을 통해 소통</u>하며 더 나은 결과물을 도출하는 것에 큰 즐거움을 느낍니다!<br /><br />
+                빠르게 변화하는 프론트엔드 기술에 발 맞춰 성장하기 위해, 저는 단순히 프레임워크의 사용법에 얽매이기보다는 그 본질적인 원리와 개념을 깊이 이해하고 이를 적용하는 데 더 많은 시간을 투자하고 있습니다. 프레임워크는 결국 도구일 뿐이며, 중요한 것은 각 상황에 최적화된 솔루션을 찾아내는 것이 중요하다고 생각합니다.<br /><br/>
+                하지만 보다 높은 생산성을 위해 프레임워크에 대한 이해도 역시 중요하다고 생각합니다. 
+                그래서 현재는 <u>React.js를 집중적으로 학습</u>하며, 다양한 프레임워크와 라이브러리에 대한 폭넓은 이해를 쌓고 있습니다. 
+                이를 통해 다양한 상황에서 더욱 유연하고 최적화된 개발을 할 수 있도록 준비하고 있습니다.<br />
+                앞으로도 지속적으로 새로운 기술을 익히고, 더 나은 개발자로 성장하는 것을 목표로 하고 있습니다.
+              </div>
             }
-           
+
           </div>
         </div>
       </div>

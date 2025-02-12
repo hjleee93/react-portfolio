@@ -10,7 +10,9 @@
 h1, p, span, div{
   font-family: 'Noto Sans KR', sans-serif;
   line-height: 180%;
-
+}
+h2,h3,h4,h5{
+  margin:0;
 }
 .typewriter .ani-desc {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
