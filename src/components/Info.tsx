@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import '../common.css';
+import '../common.scss';
+import './Info.scss'
 import { doc, getDoc } from '@firebase/firestore';
 import { db } from '../utils/firebase';
+
 
 interface User {
   email: string;
@@ -33,16 +35,14 @@ const Info: React.FC = () => {
 
 
   return (
-    <div className="info-container" ref={ref}>
+    <div className="container" ref={ref}>
       <div className="row">
-
-        <div className='info'>
           <p>
             <img src="/profile.jpeg" width="300px" style={{ marginTop: '30px' }} />
           </p>
           <div className="content">
             {user ?
-              <p dangerouslySetInnerHTML={{ __html: user?.introduction }}></p>
+              <div dangerouslySetInnerHTML={{ __html: user?.introduction }}></div>
               :
               <div>
                 <h2><b>안녕하세요!</b></h2><br />  
@@ -58,7 +58,6 @@ const Info: React.FC = () => {
               </div>
             }
 
-          </div>
         </div>
       </div>
     </div>

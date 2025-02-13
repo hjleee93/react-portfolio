@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.scss';
-import './common.css';
+import './common.scss';
 import styled from 'styled-components'
 import Info from './components/Info'
 import Projects from './components/Projects';
@@ -32,17 +32,17 @@ function App() {
         <div className='typewriter'>
           <img src={icon} />
           <h1> Frontend Developer</h1>
-          <div className='ani-desc' style={{ fontSize: '20px', paddingBottom: '50px' }}>
+          <div className='ani-desc'>
             안녕하세요, 프론트엔드 개발자 이현정입니다. <br />
           </div>
           <div className='ani-btn'>
             <button className="more-btn" onClick={handleClickScroll}><ArrowDownwardIcon />More</button>
           </div>
         </div>
-        <div ref={infoRef} id="info" className="section" > 
+        <div ref={infoRef} id="info" className="section info" > 
           <Info />
         </div>
-        <div ref={projectsRef} id="projects" className="section">
+        <div ref={projectsRef} id="projects" className="section project">
           <Projects />
         </div>
         <Footer />

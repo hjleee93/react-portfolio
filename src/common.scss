@@ -1,0 +1,62 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+
+h1, p, span, div{
+  font-family: 'Pretendard', sans-serif;
+  line-height: 180%;
+}
+
+h2,h3,h4,h5{
+  margin:0;
+}
+
+.column {
+  float: left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+li { list-style-type: none; }
+
+/* Three dots */
+.dot {
+  margin-top: 4px;
+  margin-right:6px;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Style the input field */
+input[type=text] {
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: white;
+  margin-top: -8px;
+  height: 25px;
+  color: #666;
+  padding: 5px;
+}
+
+/* Three bars (hamburger menu) */
+.bar {
+  width: 17px;
+  height: 3px;
+  background-color: #aaa;
+  margin: 3px 0;
+  display: block;
+}
+
+
+
+@media all and (max-width:  767px) {
+  p, div {
+    font-size: 14px;
+  }
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { doc, getDoc } from "firebase/firestore";
-import '../common.css'
-import styled from 'styled-components';
+import '../common.scss'
+import './Project.scss'
 import ts from '../assets/ts.png'
 import vue from '../assets/vue.png'
 import js from '../assets/js.png'
@@ -136,9 +136,8 @@ function Projects() {
     })
 
     return (
-      <div key={index}>
-        <div className='project-card'>
-          <div style={{ backgroundColor:project.color, borderRadius:'10px', padding:'30px'}}>
+        <div key={index} className='project-card'>
+          <div className='thumbnail' style={{ backgroundColor:project.color, borderRadius:'10px', padding:'30px'}}>
             <img src={img[project.img]} style={{width:'100%'}} />
           </div>
           <div>
@@ -183,18 +182,15 @@ function Projects() {
 
         </div>
         </div>
-      </div>
-      
-
     )
   })
 
 
 return ( 
-<div>
-  <h1 style={{height:'100px', display:'flex', alignItems: 'center',justifyContent: 'center'}}>PROJECTS</h1>
+<>
+  <h2 style={{height:'100px', display:'flex', alignItems: 'center',justifyContent: 'center'}}>PROJECTS</h2>
   {cards}
-</div>
+  </>
      )
 }
 export default Projects
