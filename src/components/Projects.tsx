@@ -19,6 +19,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CheckIcon from '@mui/icons-material/Check';
 import { db } from '../utils/firebase';
+import { NavLink, Route } from 'react-router-dom';
 
 
 const img: any = {
@@ -54,6 +55,7 @@ function Projects() {
       ],
       img:'zempie',
       color:'#ff6e17',
+      route:'zempie'
     },
     {
       title:'Miliverse',
@@ -81,14 +83,6 @@ function Projects() {
     },
     
   ]
-  
-  // const Container = styled.div`
-  //   margin: 40px;  
-  //   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
-  //   padding:20px;
-  //   display:flex;
-  // `;
-
   const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
@@ -103,22 +97,22 @@ function Projects() {
 
 
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    const fetchData = async () => {
-      const docRef = doc(db, "portfolio", "experience");
-      const docSnap = await getDoc(docRef);
+  //   const fetchData = async () => {
+  //     const docRef = doc(db, "portfolio", "experience");
+  //     const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
-      } else {
-        // docSnap.data() will be undefined in this case
-        console.log("No such document!");
-      }
-    };
+  //     if (docSnap.exists()) {
+  //       console.log("Document data:", docSnap.data());
+  //     } else {
+  //       // docSnap.data() will be undefined in this case
+  //       console.log("No such document!");
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   
 
@@ -140,7 +134,7 @@ function Projects() {
           <div className='thumbnail' style={{ backgroundColor:project.color, borderRadius:'10px', padding:'30px'}}>
             <img src={img[project.img]} style={{width:'100%'}} />
           </div>
-          <div>
+          <div className='desc'>
             <h2><strong>{project.title}</strong></h2>
             <small>{project.period}</small>
           <p>
@@ -155,6 +149,7 @@ function Projects() {
               {infos}
             </ul>
         
+          <NavLink to={`/projects/${project.route}`}>주요코드 확인하기</NavLink>
           <Button onClick={handleOpen}>주요 코드 확인하기</Button>
 
           <Modal

@@ -1,12 +1,8 @@
-import React, { useRef, useState } from 'react'
 import './Header.scss';
 import Dropdown from './Dropdown';
-import { useNavigate } from 'react-router-dom';
 
 
 function Header({addrMsg}:{addrMsg:string}) {
-  let navigate = useNavigate();
-  const [addMsg, setAddrMsg] = useState('https://안녕하세요_프론트엔드_개발자_이현정입니다.com')
 
   const handleNavigation = (hash: string) => {
     const element = document.querySelector(hash);
