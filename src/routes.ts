@@ -1,7 +1,7 @@
 import Home from "./pages/home";
-import projects from "./pages/projects";
+import projects from "./pages/projectDetail";
 
 export const ROUTES = [
   { path: "/", component: Home },
-  { path: "/projects/zempie", component: projects },
+  { path: `/projects/:project`, component: projects },
 ];

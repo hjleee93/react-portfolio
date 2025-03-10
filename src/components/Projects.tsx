@@ -1,36 +1,6 @@
 import { useEffect, useState } from 'react';
-import { doc, getDoc } from "firebase/firestore";
-import '../common.scss'
-import './Project.scss'
-import ts from '../assets/ts.png'
-import vue from '../assets/vue.png'
-import js from '../assets/js.png'
-import nuxt from '../assets/nuxt.png'
-import zempie from '../assets/zempie.svg'
-import miliverse from '../assets/miliverse.png'
-import kia from '../assets/kia.webp'
-
-
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import CheckIcon from '@mui/icons-material/Check';
-import { db } from '../utils/firebase';
-import { NavLink, Route } from 'react-router-dom';
-
-
-const img: any = {
-  ts,
-  vue,
-  js,
-  nuxt,
-  zempie,
-  miliverse,
-  kia
-}
+import '../styles/components/Project.scss'
+import ProjectCard from './ProjectCard';
 
 
 
@@ -39,10 +9,26 @@ function Projects() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  
   const projects = [
     {
       title:'Zempie',
+      framework:['nuxt', 'vue', 'quasar'],
+      style:['elementui'],
+      langs:['ts'],
+      header:'HTML5 게임을 공유하는 SNS 형식의 웹 어플리케이션',
+      desc:`프론트엔드는 Nuxt.js로 개발하였으며, 백엔드는 Node.js와 Sequelize를 활용하여 유지보수를 담당했습니다. 또한 어드민 페이지 개발 시에는 Quasar 프레임워크를 사용했습니다.`,
+      period:'2021.01~2024.02(3년)',
+      infos:[
+        'Vue.js 2.0 에서 Nuxt.js로 전환 후 SEO 적합성 100 달성 완료 후 google analytics 방문자 수 30% 증가',
+        'Google Analytics 4 와 BigQuery를 이용하여 단순 테이블에서 Chart.js를 이용하여 가시성을 50%이상 향상',
+        'Quasar 프레임워크를 이용하여 어드민페이지 개발을 빠르게 진행',
+      ],
+      img:'zempie',
+      color:'#ff6e17',
+      route:'zempie'
+    },
+    {
+      title:'Seller canvas',
       langs:['nuxt', 'vue', 'ts'],
       desc1:'HTML5 게임을 공유하는 SNS 형식의 웹 어플리케이션',
       desc2:`Nuxt.js 와 Vue.js 프론트 개발을 진행했으며 Node.js와 sequelize를 사용하여 백엔드 유지보수를 진행했습니다.
@@ -69,7 +55,8 @@ function Projects() {
         'Firebase 기반 로그인으로 카카오톡, 구글, 페이스북 로그인을 사용 사용자의 편의성을 높임', 
       ],
       img:'miliverse',
-      color:'#241712'
+      color:'#241712',
+      route:'miliverse'
     },
     {
       title:'KIA SNS',
@@ -79,112 +66,43 @@ function Projects() {
       period:'2021.04~2021.08 (5개월)',
       infos:[],
       img:'kia',
-      color:'transparent'
+      color:'transparent',
+      route:'kia'
     },
     
   ]
-  const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-
-
-
-  // useEffect(() => {
-    
-  //   const fetchData = async () => {
-  //     const docRef = doc(db, "portfolio", "experience");
-  //     const docSnap = await getDoc(docRef);
-
-  //     if (docSnap.exists()) {
-  //       console.log("Document data:", docSnap.data());
-  //     } else {
-  //       // docSnap.data() will be undefined in this case
-  //       console.log("No such document!");
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  
 
 
   
-
-  const cards = projects.map((project, index)=>{
-
-    const lan =  project.langs.map((lan)=>{
-      return <img src={img[lan]} width={30} key={lan}/>
-    })
-    const infos = project.infos.map((info) =>{
-      return <li key={info}  style={{display:'flex'}}><CheckIcon style={{paddingTop:'3px'}}/>{info}</li>
-     
-    })
-
-    return (
-        <div key={index} className='project-card'>
-          <div className='thumbnail' style={{ backgroundColor:project.color, borderRadius:'10px', padding:'30px'}}>
-            <img src={img[project.img]} style={{width:'100%'}} />
-          </div>
-          <div className='desc'>
-            <h2><strong>{project.title}</strong></h2>
-            <small>{project.period}</small>
-          <p>
-            <b>{project.desc1}</b>
-          </p>
-          <p>{project.desc2}</p>
-            <p style={{display: 'flex', justifyContent: 'center'}}>Made with {
-              <span style={{marginLeft:'10px'}}>{lan}</span>
-              }
-            </p>
-            <ul key={index}> 
-              {infos}
-            </ul>
-        
-          <NavLink to={`/projects/${project.route}`}>주요코드 확인하기</NavLink>
-          <Button onClick={handleOpen}>주요 코드 확인하기</Button>
-
-          <Modal
-            aria-labelledby="transition-modal-title"
-            aria-describedby="transition-modal-description"
-            open={open}
-            onClose={handleClose}
-            closeAfterTransition
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-              timeout: 500,
-            }}
-          >
-        <Fade in={open}>
-          <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              Text in a modal
-            </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography>
-          </Box>
-        </Fade>
-      </Modal>
-
-        </div>
-        </div>
-    )
-  })
-
-
 return ( 
-<>
-  <h2 style={{height:'100px', display:'flex', alignItems: 'center',justifyContent: 'center'}}>PROJECTS</h2>
-  {cards}
+  <>
+  <h2>PROJECTS</h2>
+<div className='project-list'>
+<div className="tabs">
+  <input type="radio" id="company" name="tab" defaultChecked />
+  <label htmlFor="company" className="tab" >회사 프로젝트</label>
+
+  <input type="radio" id="personal" name="tab" />
+  <label htmlFor="personal" className="tab">개인 프로젝트</label>
+
+  <div className="content">
+    <div className="tab-content company">
+    {projects.map((project, index)=>{
+    return (
+      <ProjectCard project={project} key={project.title}/>
+    )
+  })}
+  </div>
+    </div>
+    <div className="tab-content personal">
+    {projects.map((project, index)=>{
+    return (
+      <ProjectCard project={project} key={project.title}/>
+    )
+  })}
+  </div>
+    </div>
+  </div>
   </>
      )
 }

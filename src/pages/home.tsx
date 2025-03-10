@@ -1,18 +1,33 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { scrollToRef } from "../scripts/utils";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import icon from '../assets/coding.png'
+import icon from '../../public/images/coding.png'
 import Info from "../components/Info";
 import Projects from "../components/Projects";
-import './home.scss'
+import '../styles/pages/home.scss'
+import { useLocation } from "react-router-dom";
+import ScrollAnimation from "../components/Scroll";
 
 function Home() {
   const infoRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   const handleClickScroll = () => {
     scrollToRef(infoRef);
   }
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
 
   return (
     <div className="home">
@@ -27,12 +42,14 @@ function Home() {
         </div>
       </div>
       <div ref={infoRef} id="info" className="section info" >
-        <Info />
+        <ScrollAnimation>
+          <Info />
+        </ScrollAnimation>
       </div>
       <div ref={projectsRef} id="projects" className="section project">
         <Projects />
       </div>
-          </div>
+    </div>
   )
 }
 export default Home

@@ -6,7 +6,7 @@ function Footer() {
   const BLOG = import.meta.env.VITE_APP_BLOG
   return (
     <div style={{
-      backgroundColor: "#444444", height: '200px',position:'fixed', bottom:'0',width:'100%', display: 'flex',
+      backgroundColor: "#444444", height: '200px',width:'100%', display: 'flex',
       flexDirection: 'column', alignItems:'center'
     }}>
       <div style={{ paddingTop: '50px' }}>

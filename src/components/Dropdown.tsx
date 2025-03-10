@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Dropdown.scss'
+import '../styles/components/Dropdown.scss'
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 
