@@ -1,11 +1,13 @@
+import { useState } from "react";
 import "../styles/components/Header.scss"
 import Dropdown from './Dropdown';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 
-function Header({ addrMsg }: { addrMsg: string }) {
+function Header() {
   const navigate = useNavigate()
   const location = useLocation()
+  const [addr, setAddr] = useState('https://안녕하세요_프론트엔드_개발자_이현정입니다.com')
 
   const handleNavigation = (hash?: string) => {
     if (!hash) {
@@ -37,7 +39,7 @@ function Header({ addrMsg }: { addrMsg: string }) {
         <span className="dot" style={{ background: "#5AC05A" }}></span>
       </div>
       <div className="column middle">
-        <input readOnly type="text" value={addrMsg} />
+        <input readOnly type="text" value={addr} />
       </div>
 
       <div className="column right" >
