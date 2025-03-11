@@ -32,7 +32,7 @@ function Home() {
   return (
     <div className="home">
       <div className='typewriter'>
-        <img src={icon} />
+        <img src={icon} alt="" />
         <h1> Frontend Developer</h1>
         <div className='ani-desc'>
           안녕하세요, 프론트엔드 개발자 이현정입니다. <br />

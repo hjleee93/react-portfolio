@@ -10,16 +10,22 @@ export default function ScrollAnimation({children} : ScrollAnimationProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const thresholdValue = window.innerWidth < 768 ? 0 : 0.2; 
     const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.1 }
+      ([entry]) =>{
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect(); 
+        }
+      },
+      { threshold: thresholdValue }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div ref={ref} className={`scroll-fade ${isVisible ? "show" : ""}`}>
+    <div ref={ref} className={`scroll-fade ${isVisible ? "visible" : ""}`}>
       {children}
     </div>
   );
