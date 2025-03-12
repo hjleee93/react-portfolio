@@ -1,4 +1,5 @@
 .project-card {
+  text-align: left;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -13,12 +14,13 @@
   }
 
   .project-image {
-    width: 100%;
     height: 180px;
-    object-fit: cover;
+    object-fit: scale-down;
+    padding: 20px;
   }
 
   .project-content {
+    flex: 1;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -33,6 +35,12 @@
       font-size: 14px;
       color: gray;
     }
+    .description{
+      flex-grow: 1; 
+      p{
+        margin: 0;
+      }
+    }
 
     .tech-stack {
       display: flex;
@@ -44,17 +52,7 @@
         padding: 4px 8px;
         border-radius: 6px;
         font-size: 12px;
-      }
-    }
-
-    .achievements {
-      font-size: 14px;
-      color: #333;
-      list-style: none;
-      padding: 0;
-
-      li {
-        margin-bottom: 4px;
+        color:white;
       }
     }
 
@@ -62,8 +60,11 @@
       margin-top: 8px;
       text-decoration: none;
       font-weight: bold;
-      color: #007bff;
+      color: black;
       display: inline-block;
+      &:hover{
+        color:#42b883
+      }
     }
   }
 }

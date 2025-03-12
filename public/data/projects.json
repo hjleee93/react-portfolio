@@ -1,0 +1,203 @@
+[
+  {
+    "title": "AraDev",
+    "framework": [
+      "Flutter"
+    ],
+    "style": [],
+    "langs": [
+      "Dart"
+    ],
+    "header": "주유 주문 배달 현황 확인 애플리케이션",
+    "desc": [
+      "Flutter 기반 모바일 앱 개발",
+      "Kakao Map API를 활용한 실시간 배달 현황 맵 업데이트 구현"
+    ],
+    "period": "2024.02~2024.07(6개월)",
+    "infos": [
+      "Flutter를 활용한 모바일 애플리케이션 개발",
+      "Kakao Map API를 활용한 실시간 배달 현황 맵 업데이트 기능 구현",
+      "전체적인 프론트엔드 설계 및 개발 담당"
+    ],
+    "img": "logo_aradev.png",
+    "color": "#e8e8e8",
+    "route": "aradev",
+    "type": "company",
+    "additional_infos": [
+      {
+        "category": "Flutter 기반 애플리케이션 개발",
+        "details": [
+          "Dart와 Flutter를 활용한 크로스 플랫폼 앱 개발",
+          "GetX 상태 관리 도입으로 코드 유지보수성 및 확장성 향상",
+          "Flutter CustomPainter를 활용한 UI/UX 최적화"
+        ]
+      },
+      {
+        "category": "실시간 배달 현황 관리 시스템 구현",
+        "details": [
+          "Kakao Map API를 활용하여 실시간 지도 업데이트 기능 구현",
+          "WebSocket을 이용한 배달 상태 변경 알림 시스템 구축",
+          "GPS 연동을 통한 실시간 위치 추적 및 ETA(도착 예상 시간) 계산 기능 개발"
+        ]
+      },
+      {
+        "category": "퍼포먼스 및 사용자 경험 최적화",
+        "details": [
+          "애니메이션 및 인터랙션 최적화로 부드러운 사용자 경험 제공",
+          "Lazy Loading 기법을 활용한 네트워크 트래픽 최소화",
+          "앱 초기 로딩 시간 40% 단축을 위한 리소스 최적화 적용"
+        ]
+      },
+      {
+        "category": "백엔드 API 연동 및 데이터 처리",
+        "details": [
+          "RESTful API를 활용한 주문 및 배달 정보 관리",
+          "Firebase Firestore 및 Realtime Database 연동으로 실시간 데이터 처리",
+          "GraphQL 도입을 통한 효율적인 데이터 요청 및 응답 최적화"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Zempie",
+    "framework": [
+      "Nuxt",
+      "Vue",
+      "Quasar"
+    ],
+    "style": [
+      "elementui"
+    ],
+    "type": "company",
+    "langs": [
+      "Typescript"
+    ],
+    "header": "HTML5 게임을 공유하는 SNS 형식의 웹 어플리케이션",
+    "desc": [
+      "Nuxt.js로 프론트엔드 개발",
+      "Node.js와 Sequelize로 백엔드 유지보수",
+      "어드민 페이지는 Quasar 프레임워크 활용"
+    ],
+    "period": "2021.01~2024.02(3년)",
+    "infos": [
+      "Vue.js 2.0에서 Nuxt.js로 전환 후 SEO 적합성 100 달성 완료 후 google analytics 방문자 수 30% 증가",
+      "Google Analytics 4 와 BigQuery를 이용하여 단순 테이블에서 Chart.js를 이용하여 가시성을 50%이상 향상",
+      "Quasar 프레임워크를 이용하여 어드민페이지 개발을 빠르게 진행"
+    ],
+    "img": "zempie_logo.jpeg",
+    "color": "#ff6e17",
+    "route": "zempie",
+    "additional_infos": [
+      {
+        "category": "Vue2 기반 레거시 시스템의 전략적 현대화 프로젝트 주도",
+        "details": [
+          "Vue3 및 Nuxt.js 3.0 기반 아키텍처로 완전 마이그레이션하여 렌더링 성능 45% 향상 달성",
+          "Composition API 도입을 통한 비즈니스 로직 모듈화로 코드 재사용성 60% 증대 및 유지보수 공수 35% 절감",
+          "Element Plus UI 프레임워크 통합을 통한 디자인 시스템 일원화 및 개발 속도 40% 향상"
+        ]
+      },
+      {
+        "category": "검색 엔진 최적화(SEO) 전략 수립 및 구현으로 가시적 성과 창출",
+        "details": [
+          "고도화된 메타데이터 관리 및 구조화된 데이터 마크업 적용으로 Google 검색 노출 52% 증가",
+          "Lighthouse 성능 지표 최적화를 통해 모바일 성능 점수 67점에서 94점으로 개선",
+          "소셜 미디어 최적화(SMO)를 통한 유입 채널 다변화로 방문자 체류 시간 2.3배 증가"
+        ]
+      },
+      {
+        "category": "클라우드 네이티브 미디어 최적화 파이프라인 설계 및 구축",
+        "details": [
+          "AWS Lambda와 S3를 활용한 서버리스 이미지 프로세싱 아키텍처 구축으로 운영 비용 65% 절감",
+          "이미지 포맷 자동 최적화 및 반응형 이미지 제공으로 데이터 전송량 70% 감소",
+          "CloudFront CDN 엣지 로케이션 활용한 글로벌 콘텐츠 전송 최적화로 TTFB(Time To First Byte) 78ms 달성"
+        ]
+      },
+      {
+        "category": "엔터프라이즈급 관리자 시스템 설계 및 개발",
+        "details": [
+          "Quasar 프레임워크와 Element UI 컴포넌트 조합으로 고성능 어드민 대시보드 구축",
+          "데이터 시각화 모듈 개발을 통한 실시간 비즈니스 인사이트 제공으로 의사결정 속도 30% 개선",
+          "권한 기반 접근 제어(RBAC) 시스템 구현으로 보안 취약점 제로화 달성"
+        ]
+      },
+      {
+        "category": "확장성 높은 백엔드 아키텍처 고도화",
+        "details": [
+          "Next.js 및 Sequelize ORM 기반 마이크로서비스 아키텍처 설계로 API 응답 시간 65% 단축",
+          "데이터베이스 쿼리 최적화 및 캐싱 전략 도입으로 서버 부하 45% 감소",
+          "Swagger를 활용한 API 문서 자동화로 프론트엔드-백엔드 협업 효율성 50% 향상"
+        ]
+      },
+      {
+        "category": "게임 플랫폼 특화 기능 개발로 사용자 경험 혁신",
+        "details": [
+          "WebGL 기반 게임 에셋 프리로딩 및 청크 로딩 전략 구현으로 게임 시작 시간 2.8초에서 0.9초로 단축",
+          "Socket.IO 기반 실시간 멀티플레이어 인프라 구축으로 동시 접속자 5,000명 이상 안정적 지원",
+          "프로그레시브 웹 앱(PWA) 기술 적용으로 오프라인 기능 및 모바일 설치 지원을 통한 사용자 리텐션 43% 개선",
+          "크로스 플랫폼 데이터 동기화 시스템 개발로 기기 간 게임 진행 상태 실시간 연동 구현"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Seller Canvas",
+    "framework": [
+      "Vue"
+    ],
+    "style": [],
+    "langs": [
+      "Typescript"
+    ],
+    "header": "패션 상품 판매 상세 페이지 자동 디자인 솔루션",
+    "desc": [
+      "Vue.js 기반 프론트엔드 개발 및 프로젝트 구조 설계",
+      "기존 Vue.js 보일러플레이트 활용으로 개발 속도 20% 이상 향상",
+      "나이스 본인인증 솔루션 도입 및 사용자 인증 프로세스 구현"
+    ],
+    "period": "2023.01~2023.04(4개월)",
+    "infos": [
+      "Vue.js를 활용한 프론트엔드 개발 및 프로젝트 구조 설계",
+      "기존 Vue.js 보일러플레이트를 활용하여 개발 속도 20% 이상 향상",
+      "나이스 본인인증 솔루션을 도입하여 사용자 인증 프로세스 구현"
+    ],
+    "img": "seller.png",
+    "color": "#e8e8e8",
+    "route": "sellercanvas",
+    "type": "company",
+    "additional_infos": [
+      {
+        "category": "Vue.js 기반 프론트엔드 개발",
+        "details": [
+          "Vue 2 및 Vuex를 활용한 상태 관리 및 컴포넌트 기반 설계",
+          "반응형 디자인 적용 및 사용자 경험 최적화",
+          "Vue Router를 이용한 페이지 라우팅 및 네비게이션 구성"
+        ]
+      },
+      {
+        "category": "패션 상품 상세 페이지 자동화",
+        "details": [
+          "상품 정보를 기반으로 자동 디자인 생성 로직 구현",
+          "사용자 입력에 따라 동적으로 스타일 변형 적용",
+          "이미지 및 텍스트 최적화로 로딩 성능 개선"
+        ]
+      },
+      {
+        "category": "사용자 인증 및 보안 강화",
+        "details": [
+          "나이스 본인인증 솔루션을 활용한 본인 확인 시스템 구축",
+          "OAuth 기반 소셜 로그인 연동 및 JWT 인증 적용",
+          "CSRF 및 XSS 방지를 위한 보안 정책 적용"
+        ]
+      },
+      {
+        "category": "퍼포먼스 최적화 및 배포",
+        "details": [
+          "Vue.js 코드 스플리팅 및 Lazy Loading 적용으로 초기 로딩 시간 단축",
+          "Webpack 최적화를 통해 번들 크기 30% 감소",
+          "AWS S3 및 CloudFront를 활용한 정적 파일 배포"
+        ]
+      }
+    ]
+  }
+  
+]

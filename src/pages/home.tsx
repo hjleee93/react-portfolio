@@ -47,7 +47,9 @@ function Home() {
         </ScrollAnimation>
       </div>
       <div ref={projectsRef} id="projects" className="section project">
-        <Projects />
+        <ScrollAnimation>
+          <Projects />
+        </ScrollAnimation>
       </div>
     </div>
   )
